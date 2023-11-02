@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ukol4CetnostZnaku", "Ukol4CetnostZnaku\Ukol4CetnostZnaku.csproj", "{336E2169-99C7-407C-8823-77E78D9672EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{336E2169-99C7-407C-8823-77E78D9672EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{336E2169-99C7-407C-8823-77E78D9672EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{336E2169-99C7-407C-8823-77E78D9672EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{336E2169-99C7-407C-8823-77E78D9672EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {996F1939-8A8E-49EA-B98B-D2CED464CE34}
+	EndGlobalSection
+EndGlobal
