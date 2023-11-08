@@ -1,5 +1,7 @@
 ﻿//using System.Collections.Generic;
+using System.Collections.Generic;
 using Ukol4CetnostZnaku;
+using static System.Net.Mime.MediaTypeNames;
 
 /* 
  * Zadání:
@@ -11,35 +13,34 @@ using Ukol4CetnostZnaku;
 Console.WriteLine("Zadej text pro provedení statistiky: ");
 string zadanyText = Console.ReadLine();
 
-List<StatistikaZnaku> statistikaTextu = new List<StatistikaZnaku>();
+var statistikaTextu = new List<StatistikaZnaku>();
+bool nutnoPridat = true;
 
-StatistikaZnaku zadaneZnaky = new StatistikaZnaku();
-int pocet = 0;
-
-foreach (char znak in zadanyText)
-{
-    pocet = 0;
-    for(int i=0; i<zadanyText.Length;i++)
+foreach (var znak in zadanyText)
+{ 
+    if (statistikaTextu.Any()) 
     {
-        if (znak == zadanyText[i])
+        nutnoPridat = true;
+        for (int i = 0; i < statistikaTextu.Count; i++)
+        { 
+            if (statistikaTextu[i].Znak == znak)
+            {
+                statistikaTextu[i].PocetVyskytu++;
+                nutnoPridat = false;
+
+            } 
+        } 
+        if(nutnoPridat)
         {
-            pocet = pocet + 1;
+            statistikaTextu.Add(new StatistikaZnaku() { Znak = znak, PocetVyskytu = 1 });
         }
-        //Console.WriteLine(znak + "-" + zadanyText[i] + "-" + pocet);
-
-    }
-    //Console.WriteLine("Konec cyklu");
-    zadaneZnaky.Znak = znak;
-    zadaneZnaky.PocetVyskytu = pocet;
-    //Console.WriteLine(zadaneZnaky.Znak+"-"+zadaneZnaky.PocetVyskytu);
-    if (!statistikaTextu.Contains(zadaneZnaky))
+    } 
+    else 
     {
-    statistikaTextu.Add(zadaneZnaky);
-    //Console.WriteLine("ULOŽENO");
+        statistikaTextu.Add(new StatistikaZnaku() { Znak = znak, PocetVyskytu=1 }); 
     }
 
-}
-
+}   
 foreach (StatistikaZnaku item in statistikaTextu)
 {
     Console.WriteLine(item.Znak+" - "+item.PocetVyskytu);
